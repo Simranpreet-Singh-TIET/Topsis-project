@@ -11,7 +11,7 @@ from email.mime.base import MIMEBase
 from email import encoders
 
 def send_mail(email_id,resultfile):
-    fromaddr = "simranmangat700@gmail.com"
+    fromaddr = st.secrets['email']
     toaddr = email_id
    
 
@@ -58,7 +58,7 @@ def send_mail(email_id,resultfile):
     s.starttls()
   
 # Authentication
-    s.login(fromaddr, "mjimbnrdjgmbcmxf") #Here password will be unique for every users...
+    s.login(fromaddr, st.secrets['password']) #Here password will be unique for every users...
   
 # Converts the Multipart msg into a string
     text = msg.as_string()
